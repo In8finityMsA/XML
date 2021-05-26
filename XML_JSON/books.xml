@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE library
+        [
+                <!ELEMENT library (reading_room, library_loan, reserve)>
+                <!ELEMENT reading_room (books)>
+                <!ELEMENT library_loan (books)>
+                <!ELEMENT reserve (books)>
+
+                <!ELEMENT books (book*)>
+                <!ELEMENT book (name, isbn, author+)>
+                <!ELEMENT name (#PCDATA)>
+                <!ELEMENT isbn (#PCDATA)>
+                <!ELEMENT author (#PCDATA)>
+                <!ATTLIST book inventory_number ID #REQUIRED>
+                ]>
+
+<library>
+    <reading_room>
+        <books>
+            <book inventory_number="n1_1">
+                <name></name>
+                <isbn></isbn>
+                <author></author>
+            </book>
+        </books>
+    </reading_room>
+    <library_loan>
+        <books>
+            <book inventory_number="n2_1">
+                <name></name>
+                <isbn></isbn>
+                <author></author>
+                <author></author>
+            </book>
+        </books>
+    </library_loan>
+    <reserve>
+        <books>
+            <book inventory_number="n3_1">
+                <name></name>
+                <isbn></isbn>
+                <author></author>
+            </book>
+        </books>
+    </reserve>
+</library>

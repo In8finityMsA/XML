@@ -1,0 +1,144 @@
+﻿{
+  "definitions": {
+    "book": {
+      "type": "object",
+      "properties": {
+        "inventory_number": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "isbn": {
+          "type": "string"
+        },
+        "authors": {
+          "type": "array",
+          "items": [
+            {
+              "type": "string"
+            }
+          ]
+        }
+      },
+      "required": [
+        "inventory_number",
+        "name",
+        "isbn",
+        "authors"
+      ]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "library": {
+      "type": "object",
+      "properties": {
+        "reading_room": {
+          "type": "object",
+          "properties": {
+            "books": {
+              "type": "array",
+              "items": [
+                
+              ]
+            }
+          },
+          "required": [
+            "books"
+          ]
+        },
+        "library_room": {
+          "type": "object",
+          "properties": {
+            "books": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "inventory_number": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "isbn": {
+                      "type": "string"
+                    },
+                    "authors": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "inventory_number",
+                    "name",
+                    "isbn",
+                    "authors"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "books"
+          ]
+        },
+        "reserve": {
+          "type": "object",
+          "properties": {
+            "books": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "inventory_number": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "isbn": {
+                      "type": "string"
+                    },
+                    "authors": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "inventory_number",
+                    "name",
+                    "isbn",
+                    "authors"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "books"
+          ]
+        }
+      },
+      "required": [
+        "reading_room",
+        "library_room",
+        "reserve"
+      ]
+    }
+  },
+  "required": [
+    "library"
+  ]
+}

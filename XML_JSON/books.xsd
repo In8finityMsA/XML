@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="library" type="libraryType"/>
+  
+  <xs:complexType name="bookType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="isbn" type="xs:string"/>
+      <xs:element name="author" type="xs:string" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="inventory_number" type="xs:string" use="required"/>
+  </xs:complexType>
+  
+  <xs:complexType name="booksType">
+    <xs:sequence>
+      <xs:element name="book" type="bookType"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="reading_roomType">
+    <xs:sequence>
+      <xs:element name="books" type="booksType" />
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="library_loanType">
+    <xs:sequence>
+      <xs:element name="books" type="booksType"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="reserveType">
+    <xs:sequence>
+      <xs:element name="books" type="booksType"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="libraryType">
+    <xs:sequence>
+      <xs:element name="reading_room" type="reading_roomType"/>
+      <xs:element name="library_loan" type="library_loanType"/>
+      <xs:element name="reserve" type="reserveType"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+</xs:schema>

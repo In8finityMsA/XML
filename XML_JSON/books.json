@@ -1,0 +1,34 @@
+﻿{
+  "library": {
+    "reading_room": {
+      "books": [
+        {
+          "inventory_number": 11,
+          "name": "",
+          "isbn": "",
+          "authors": [""]
+        }
+      ]
+    },
+    "library_room": {
+      "books": [
+        {
+          "inventory_number": 21,
+          "name": "",
+          "isbn": "",
+          "authors": [""]
+        }
+      ]
+    },
+    "reserve": {
+      "books": [
+        {
+          "inventory_number": 31,
+          "name": "",
+          "isbn": "",
+          "authors": [""]
+        }
+      ]
+    }
+  }
+}
