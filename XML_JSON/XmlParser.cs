@@ -31,7 +31,7 @@ namespace XML_JSON
                 }
                 else
                 {
-                    Console.WriteLine("Schema filename is null");
+                    throw new ArgumentException("Schema filename is null");
                 }
                 
             }
@@ -48,7 +48,7 @@ namespace XML_JSON
         {
             if (reader == null)
             {
-                Console.WriteLine("An error occured");
+                throw new ArgumentException("An error occured, reader is not set");
             }
 
             errors = new List<string>();
@@ -107,7 +107,7 @@ namespace XML_JSON
         {
             if (!File.Exists(filename))
             {
-                Console.WriteLine("File can't be found: " + filename);
+                throw new FileNotFoundException("File can't be found: " + filename);
             }
             
             List<string> errorsSchema = new List<string>();
@@ -118,12 +118,7 @@ namespace XML_JSON
 
             if (errorsSchema.Count > 0)
             {
-                Console.WriteLine("Your Scheme contains errors!");
-                foreach (var error in errorsSchema)
-                {
-                    Console.WriteLine(error);
-                }
-
+                throw new ArgumentException("Your Scheme contains errors!");
                 return null;
             }
             
